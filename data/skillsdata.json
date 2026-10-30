@@ -1,0 +1,176 @@
+[
+    {
+        "name": "Programming Languages",
+        "items": [
+            {
+                "name": "C",
+                "imgpath": "/skills/c.png"
+            },
+            {
+                "name": "C++",
+                "imgpath": "/skills/c++.png"
+            },
+            {
+                "name": "C#",
+                "imgpath": "/skills/csharp.png"
+            },
+            {
+                "name": "Python",
+                "imgpath": "/skills/python.png"
+            },
+            {
+                "name": "JavaScript",
+                "imgpath": "/skills/javascript.png"
+            },
+            {
+                "name": "TypeScript",
+                "imgpath": "/skills/typescript.png"
+            },
+            {
+                "name": "Java",
+                "imgpath": "/skills/java.png"
+            },
+            {
+                "name": "HTML",
+                "imgpath": "/skills/html.png"
+            },
+            {
+                "name": "Kotlin",
+                "imgpath": "/skills/kotlin.png"
+            }
+        ]
+    },
+    {
+        "name": "Web Development",
+        "items": [
+            {
+                "name": "React",
+                "imgpath": "/skills/react.png"
+            },
+            {
+                "name": "Node.js",
+                "imgpath": "/skills/nodejs.png"
+            },
+            {
+                "name": "Express",
+                "imgpath": "/skills/express.png"
+            },
+            {
+                "name": "Next.js",
+                "imgpath": "/skills/nextjs.png"
+            },
+            {
+                "name": "Flask",
+                "imgpath": "/skills/flask.png"
+            },
+            {
+                "name": "Springboot",
+                "imgpath": "/skills/springboot.png"
+            },
+            {
+                "name": ".Net",
+                "imgpath": "/skills/net.png"
+            },
+            {
+                "name": "Tailwind CSS",
+                "imgpath": "/skills/tailwindcss.png"
+            },
+            {
+                "name": "Bootstrap",
+                "imgpath": "/skills/bootstrap.png"
+            }
+        ]
+    },
+    {
+        "name": "Databases",
+        "items": [
+            {
+                "name": "MySQL",
+                "imgpath": "/skills/mysql.png"
+            },
+            {
+                "name": "PostgreSQL",
+                "imgpath": "/skills/postgresql.png"
+            },
+            {
+                "name": "MongoDB",
+                "imgpath": "/skills/mongodb.png"
+            },
+            {
+                "name": "SQLite",
+                "imgpath": "/skills/sqlite.png"
+            },
+            {
+                "name": "Firebase",
+                "imgpath": "/skills/firebase.png"
+            }
+        ]
+    },
+    {
+        "name": "Machine Learning & AI",
+        "items": [
+            {
+                "name": "TensorFlow",
+                "imgpath": "/skills/tensorflow.png"
+            },
+            {
+                "name": "PyTorch",
+                "imgpath": "/skills/pytorch.png"
+            },
+            {
+                "name": "OpenCV",
+                "imgpath": "/skills/opencv.png"
+            },
+            {
+                "name": "Hugging Face",
+                "imgpath": "/skills/hface.png"
+            }
+        ]
+    },
+    {
+        "name": "Tools & Platforms",
+        "items": [
+            {
+                "name": "Git",
+                "imgpath": "/skills/git.png"
+            },
+            {
+                "name": "Docker",
+                "imgpath": "/skills/docker.png"
+            },
+            {
+                "name": "Kubernetes",
+                "imgpath": "/skills/kubernetes.png"
+            },
+            {
+                "name": "Jenkins",
+                "imgpath": "/skills/jenkins.png"
+            },
+            {
+                "name": "Terraform",
+                "imgpath": "/skills/terraform.png"
+            },
+            {
+                "name": "AWS",
+                "imgpath": "/skills/aws.png"
+            },
+            {
+                "name": "Google Cloud",
+                "imgpath": "/skills/gcloud.png"
+            },
+            {
+                "name": "Postman",
+                "imgpath": "/skills/postman.png"
+            },
+            {
+                "name": "Jira",
+                "imgpath": "/skills/jira.png"
+            },
+            {
+                "name": "Figma",
+                "imgpath": "/skills/figma.png"
+            }
+
+        ]
+    }
+]
