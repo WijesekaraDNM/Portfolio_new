@@ -151,6 +151,37 @@ export default function Home() {
     },
     {
       id: 5,
+      projectcode: "RCC",
+      category: "Web Development",
+      title: "Richmond College Cricket Progressive Web Application",
+      description: "A progressive web application developed for Richmond College Cricket to streamline sports administration, offering a high-fidelity user interface and robust background systems for tracking team and player performance.",
+      technologies: ["React.js", "Tailwind CSS", "Spring Boot", "Node.js", "MySQL", "IIS", "Figma", "Photoshop"],
+      github: "https://github.com/WijesekaraDNM/RichmandCollegeCricketTeam/tree/Nuwani_Test_Branch", 
+      demo: "https://youtu.be/Qebs4PXEuq8", 
+      image: `${BASE_PATH}/projects/Rcc.png`,
+      features: [
+        "End-to-End Admin Panel: Engineered the complete frontend administrative engine featuring clean data tables and dynamic forms to handle CRUD workflows for players, teams, matches, coaches, officials, and system admins.",
+        "Dynamic Profile & Stat Systems: Built distinct, highly responsive profile dashboards for players, coaches, and officials to track personal metrics, handle practice session management, and visualize performance data.",
+        "Content Management & UI Components: Implemented localized popups for clean team roster data visualization alongside a customized news creation utility complete with interactive real-time preview sections.",
+        "Backend & API Collaboration: Partnered closely with the backend team to design and integrate Spring Boot REST APIs, ensuring robust data binding, smooth state handling, and optimal frontend performance.",
+        "Deployment Pipelines: Collaborative involvement in configuring the hosting environment and managing the application's deployment phase using Internet Information Services (IIS)."
+      ],
+      gallery: [
+        `${BASE_PATH}/projects/RCC/gallery/rcc1.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc2.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc3.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc4.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc5.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc6.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc7.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc8.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc9.jpeg`,
+        `${BASE_PATH}/projects/RCC/gallery/rcc10.jpeg`,
+      ],
+      architectureImage: `${BASE_PATH}/projects/RCCRICKET/softwareArch.png`
+    },
+    {
+      id: 6,
       projectcode: "DISASTERMANAGEMENT",
       category: "Web Development",
       title: "Web based Disaster Management System",
@@ -178,7 +209,7 @@ export default function Home() {
       
     },
     {
-      id: 6,
+      id: 7,
       projectcode: "TRAVELHELPER",
       category: "Mobile Development",
       title: "Travel Helper Mobile Application",
