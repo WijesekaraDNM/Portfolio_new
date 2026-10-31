@@ -156,7 +156,7 @@ export default function Home() {
       title: "Richmond College Cricket Progressive Web Application",
       description: "A centralized progressive web application developed for Richmond College Cricket to unify sports administration, team operations, and player engagement under a single responsive digital platform.",
       technologies: ["React.js", "Tailwind CSS", "Spring Boot", "Node.js", "MySQL", "IIS", "Figma", "Photoshop"],
-      github: "https://github.com/WijesekaraDNM/RichmandCollegeCricketTeam/tree/Nuwani_Test_Branch", 
+      github: null, 
       demo: "https://youtu.be/Qebs4PXEuq8", 
       image: `${BASE_PATH}/projects/Rcc.png`,
       features: [

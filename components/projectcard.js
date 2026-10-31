@@ -43,14 +43,15 @@ export default function ProjectCard({ project }) {
 
         {/* Action Links */}
         <div className="flex items-center gap-6 pt-4 border-t border-slate-100 dark:border-slate-800">
-          <a 
-            href={project.github} 
-            className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-          >
-            <span className="text-lg">GitHub</span>
-            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-          
+          {project.github && (
+            <a 
+              href={project.github} 
+              className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span className="text-lg">GitHub</span>
+              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          )}
           {project.demo && (
             <a 
               href={project.demo} 

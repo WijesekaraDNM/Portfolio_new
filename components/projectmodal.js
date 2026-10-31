@@ -97,9 +97,11 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
               {/* Final Footer Links */}
               <div className="flex gap-4 pt-10">
-                <a href={project.github} className="flex-1 text-center py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl transition-opacity hover:opacity-90">
-                  View Source Code
-                </a>
+                {project.github && (
+                  <a href={project.github} className="flex-1 text-center py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-xl transition-opacity hover:opacity-90">
+                    View Source Code
+                  </a>
+                )}
                 {project.demo && (
                   <a href={project.demo} className="flex-1 text-center py-4 bg-blue-600 text-white font-bold rounded-xl transition-opacity hover:opacity-90">
                     Live Project
