@@ -154,17 +154,17 @@ export default function Home() {
       projectcode: "RCC",
       category: "Web Development",
       title: "Richmond College Cricket Progressive Web Application",
-      description: "A progressive web application developed for Richmond College Cricket to streamline sports administration, offering a high-fidelity user interface and robust background systems for tracking team and player performance.",
+      description: "A centralized progressive web application developed for Richmond College Cricket to unify sports administration, team operations, and player engagement under a single responsive digital platform.",
       technologies: ["React.js", "Tailwind CSS", "Spring Boot", "Node.js", "MySQL", "IIS", "Figma", "Photoshop"],
       github: "https://github.com/WijesekaraDNM/RichmandCollegeCricketTeam/tree/Nuwani_Test_Branch", 
       demo: "https://youtu.be/Qebs4PXEuq8", 
       image: `${BASE_PATH}/projects/Rcc.png`,
       features: [
-        "End-to-End Admin Panel: Engineered the complete frontend administrative engine featuring clean data tables and dynamic forms to handle CRUD workflows for players, teams, matches, coaches, officials, and system admins.",
-        "Dynamic Profile & Stat Systems: Built distinct, highly responsive profile dashboards for players, coaches, and officials to track personal metrics, handle practice session management, and visualize performance data.",
-        "Content Management & UI Components: Implemented localized popups for clean team roster data visualization alongside a customized news creation utility complete with interactive real-time preview sections.",
-        "Backend & API Collaboration: Partnered closely with the backend team to design and integrate Spring Boot REST APIs, ensuring robust data binding, smooth state handling, and optimal frontend performance.",
-        "Deployment Pipelines: Collaborative involvement in configuring the hosting environment and managing the application's deployment phase using Internet Information Services (IIS)."
+        "Comprehensive Administration Portal: Provides system administrators with a unified control engine featuring clean data tables and dynamic forms to manage full CRUD workflows for players, teams, matches, coaches, and officials.",
+        "Granular Performance & Statistics Tracking: Delivers interactive score matrices that capture and display individual match metrics across detailed batting, bowling, and fielding splits through localized data popups.",
+        "Role-Specific User Profiles: Features customized dashboard views tailored specifically to different access levels—including Player Profiles (personal details, stats, practice logs), Coach Profiles (practice session scheduling and management), and Official Profiles.",
+        "Content Management & Live Preview: Houses an integrated news publishing utility equipped with custom data fields and interactive layout modules, allowing immediate visual previews of structural updates before they go live.",
+        "Cross-Platform PWA Experience: Architected as a highly accessible progressive web app that delivers an engaging, intuitive user experience for all stakeholders—including general users, players, coaches, officials, and admins—across any responsive device screen."
       ],
       gallery: [
         `${BASE_PATH}/projects/RCC/gallery/rcc1.jpeg`,
@@ -181,7 +181,35 @@ export default function Home() {
       architectureImage: `${BASE_PATH}/projects/RCCRICKET/softwareArch.png`
     },
     {
-      id: 6,
+      id: 6, 
+      projectcode: "EXPENSE TRACKER",
+      category: "Web Development",
+      title: "Personal Expense Tracker",
+      description: "A comprehensive web application designed to help users track daily expenses, manage budgets, and visualize spending habits efficiently.",
+      technologies: ["ReactJS", "Node.js", "Express", "MongoDB", "Tailwind CSS"], // Adjust technologies if you used a different stack like MERN or Java/Spring Boot
+      github: "https://github.com/WijesekaraDNM/Expense-Tracker", 
+      demo: null, 
+      image: `${BASE_PATH}/projects/ET.png`,
+      features: [
+        "Expense Logging & Categorization: Easily record transactions and organize them by custom categories.",
+        "Budget Management: Set monthly spending limits and receive real-time financial tracking updates.",
+        "Data Visualization: Intuitive graphical dashboards analyzing spending patterns and trends over time."
+      ],
+      architectureImage: `${BASE_PATH}/projects/EXPENSETRACKER/softwareArch.png`,
+      gallery: [
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et1.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et2.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et3.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et5.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et6.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et7.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et8.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et9.png`,
+        `${BASE_PATH}/projects/EXPENSETRACKER/gallery/et10.png`,
+      ]
+    },
+    {
+      id: 7,
       projectcode: "DISASTERMANAGEMENT",
       category: "Web Development",
       title: "Web based Disaster Management System",
@@ -206,10 +234,9 @@ export default function Home() {
         `${BASE_PATH}/projects/DMS/gallery/DMS7.png`,
         `${BASE_PATH}/projects/DMS/gallery/DMS8.png`,
       ]
-      
     },
     {
-      id: 7,
+      id: 8,
       projectcode: "TRAVELHELPER",
       category: "Mobile Development",
       title: "Travel Helper Mobile Application",
@@ -223,7 +250,15 @@ export default function Home() {
         "Local Attractions: Provides information about local attractions and activities at various destinations.",
         "Itinerary Management: Allows users to manage and update their travel itineraries in real-time."
       ],
-      architectureImage: `${BASE_PATH}/projects/TRAVELHELPER/softwareArch.png`
+      architectureImage: `${BASE_PATH}/projects/TRAVELHELPER/softwareArch.png`,
+      gallery: [
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH1.jpeg`,
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH2.jpeg`,
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH3.jpeg`,
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH4.jpeg`,
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH5.jpeg`,
+        `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH6.jpeg`,
+      ]
     }
   ];
 
