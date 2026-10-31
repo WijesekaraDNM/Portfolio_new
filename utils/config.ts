@@ -1,1 +1,1 @@
-export const BASE_PATH = process.env.NODE_ENV === "production" ? "/project_showcase" : "";
+export const BASE_PATH = process.env.NODE_ENV === "production" ? "/Portfolio_new" : "";
