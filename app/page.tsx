@@ -32,20 +32,48 @@ export default function Home() {
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Message sent!");
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "Failed to send message.");
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully. I will get back to you soon."
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: error instanceof Error ? error.message : "Something went wrong while sending your message."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const projects = [
     {
       id: 1,
       projectcode: "EMOIFY",
-      category: "AI & Computer Vision & Robotics",
+      category: "AI, Computer Vision & Robotics",
       title: "EMOIFY - Intelligent HCI Ecosystem via Real-Time FER, Wellness Monitoring, and Social Robotics",
       description: "An award-winning, edge-deployed Human-Computer Interaction (HCI) and affective computing framework integrating real-time computer vision classifiers, a state-centric multi-agent LLM workflow, and an IoT-synchronized desktop robot companion to counteract digital fatigue.",
       technologies: [
@@ -259,11 +287,107 @@ export default function Home() {
         `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH5.jpeg`,
         `${BASE_PATH}/projects/TRAVELHELPER/gallery/TH6.jpeg`,
       ]
+    },
+    {
+      id: 9,
+      projectcode: "TRYON",
+      category: "Web Development",
+      title: "Virtual Try-On",
+      description:
+        "An experimental full-stack 3D fashion try-on prototype that combines AI-generated garment modeling with a virtual avatar fitting experience. The project explores how Tripo AI can generate garment models from uploaded images, which are then integrated into a 3D avatar system for virtual clothing visualization and size-based fitting previews.",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Three.js",
+        "React Three Fiber",
+        "Tripo AI",
+        "SMPL/Avatar System",
+        "Tailwind CSS",
+      ],
+      github: "https://github.com/WijesekaraDNM/TryOn",
+      demo: "https://www.youtube.com/watch?v=airArp22g1U",
+      image: `${BASE_PATH}/projects/Tryon.jpg`,
+      features: [
+        "AI Garment Generation: Uses Tripo AI to generate 3D garment models from uploaded images and style references.",
+        "Virtual Try-On Experience: Integrates generated garments into a 3D avatar environment for interactive outfit visualization.",
+        "Customizable Avatar Fitting: Includes gender selection and adjustable body dimensions to explore garment fit across different body types.",
+        "Size-Based Try-On Simulation: Allows users to preview garments in different sizes to assess fit and silhouette.",
+        "3D Fashion Visualization: Demonstrates an immersive virtual shopping and fitting experience for early-stage fashion experimentation."
+      ],
+      architectureImage: `${BASE_PATH}/projects/3DFASHIONNEW/softwareArch.png`
+    },
+    {
+      id: 10,
+      projectcode: "DLSQA",
+      category: "AI & Web Development",
+      title: "DL Sinhala Q&A Platform",
+      description:
+        "A full-stack AI learning platform that lets users upload educational videos, transcribe them with Gemini, split the transcript into context chunks, generate embeddings, and retrieve the most relevant content using a Retrieval-Augmented Generation (RAG) pipeline. The system answers questions in Sinhala or Singlish using video-grounded context, supports timestamp-based learning, and generates structured chapter summaries to help users understand complex topics more effectively.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "FastAPI",
+        "Python",
+        "Gemini API",
+        "OpenSearch",
+        "AWS S3",
+        "Redis",
+        "FFmpeg",
+        "Tailwind CSS",
+        "MongoDB"
+      ],
+      github: "https://github.com/WijesekaraDNM/Full-stack-AI-Learning-Platform",
+      demo: null,
+      image: `${BASE_PATH}/projects/Q&A.png`,
+      features: [
+        "Video Upload & Processing: Supports uploading educational videos and processing them through FFmpeg-based chunking and metadata extraction.",
+        "AI Transcription: Uses Gemini 2.5 Flash to generate timestamped transcripts from long-form video content.",
+        "RAG-based Q&A: Generates embeddings for transcript chunks and retrieves the most relevant sections via OpenSearch before answering user questions.",
+        "Context-Aware Responses: Grounds answers in the retrieved video transcript to stay within the source material and reduce hallucinations.",
+        "Sinhala & Singlish Support: Designed for Sinhala-language learning queries with response constraints tied to the source video context.",
+        "Course Roadmap Generation: Builds structured topic maps and learning outlines from transcript summaries for better navigation.",
+        "Dashboard Experience: Provides a modern UI for uploaded videos, thumbnails, search, and watching with interactive learning support."
+      ],
+      architectureImage: `${BASE_PATH}/projects/DLSinhalaQA/architecture.png`,
+      gallery: [
+        `${BASE_PATH}/projects/Q&A/gallery/Q&A1.png`,
+        `${BASE_PATH}/projects/Q&A/gallery/Q&A2.png`,
+        `${BASE_PATH}/projects/Q&A/gallery/Q&A3.png`,
+        `${BASE_PATH}/projects/Q&A/gallery/Q&A4.png`,
+      ]
+    },
+    { "id": 11, 
+      "projectcode": "FINDME", 
+      "category": "AI & Web Development", 
+      "title": "FindMe", 
+      "description": "A smart event photo platform that helps photographers organize memorable events and lets guests quickly find their own photos without manually searching through large galleries. Photographers can create event pages, share QR codes, and manage event photo collections, while guests can open the event link, upload a selfie, and instantly discover the photos where they appear. The app brings convenience, personalization, and a smooth event experience for both organizers and attendees.", 
+      "technologies": [ "React", "Next.js", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "PostgreSQL", "pgvector", "InsightFace", "ArcFace", "Google Drive API", "AWS S3", "Redis", "Docker", "Nginx" ], 
+      "github": "https://github.com/your-username/scanme", 
+      "demo": "https://youtu.be/4C2w040OqVU", 
+      "image": `${BASE_PATH}/projects/FindMe.png`, 
+      "features": [ 
+        "Event creation and management: Photographers can set up events, organize photo collections, and generate event access links.", 
+        "QR-based guest access: Guests can join an event by scanning a QR code and open the photo gallery instantly.", 
+        "Selfie-based photo search: Guests upload a selfie to find images where they appear in the event.", 
+        "AI face matching: The app uses facial recognition to find the closest photo matches with high accuracy.", 
+        "Automatic processing pipeline: Photos are organized, indexed, and prepared in the background without manual work.", 
+        "Privacy-conscious matching: Guest selfies are processed securely and not permanently stored as raw images.", 
+        "Modern dashboard experience: A clean interface helps both photographers and guests complete tasks quickly and easily." ], 
+      "architectureImage": "${BASE_PATH}/projects/ScanMe/architecture.png", 
+      "gallery": [ 
+        `${BASE_PATH}/projects/FINDME/gallery/FindMe1.png`,
+        `${BASE_PATH}/projects/FINDME/gallery/FindMe2.png`,
+      ] 
     }
   ];
 
   const skills = {
-    "Programming Languages": ["C/C++","C#", "Python", "JavaScript/TypeScript", "Java", "Kotlin", "Flutter"],
+    "Programming Languages": ["C/C++","C#", "Python", "JavaScript/TypeScript", "Java", "Kotlin"],
     "Web Development": ["ReactJS", "NextJS", "NodeJS", "ExpressJS", "Springboot", "Tailwind CSS", "REST APIs"],
     "Embedded Systems": ["Arduino", "ESP32", "Raspberry Pi", "STM32", "RTOS", "I2C/SPI/UART"],
     "Hardware & Digital Design": ["FPGA", "Verilog", "Digital Logic", "Computer Architecture", "PCB Design"],
@@ -584,11 +708,24 @@ export default function Home() {
                   ></textarea>
                 </div>
 
+                {submitStatus && (
+                  <div
+                    className={`rounded-xl border px-4 py-3 text-sm ${
+                      submitStatus.type === "success"
+                        ? "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300"
+                        : "border-red-200 bg-red-50 text-red-700 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full group relative flex items-center justify-center gap-3 bg-slate-900 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white py-4 rounded-xl font-bold transition-all overflow-hidden shadow-lg shadow-blue-500/20"
+                  disabled={isSubmitting}
+                  className="w-full group relative flex items-center justify-center gap-3 bg-slate-900 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white py-4 rounded-xl font-bold transition-all overflow-hidden shadow-lg shadow-blue-500/20 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  <span className="relative z-10">Send Message</span>
+                  <span className="relative z-10">{isSubmitting ? "Sending..." : "Send Message"}</span>
                   <span className="group-hover:translate-x-1 transition-transform relative z-10">🚀</span>
                 </button>
               </form>

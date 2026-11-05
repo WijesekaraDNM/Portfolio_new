@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export default function ProjectModal({ project, isOpen, onClose }) {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   if (!project) return null;
 
   return (
@@ -21,7 +24,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800"
+            className="modern-scroll relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800"
           >
             {/* Close Button */}
             <button 
@@ -90,10 +93,44 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 <h3 className="text-xl font-bold mb-6">Visual Interface</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {project.gallery?.map((img, i) => (
-                    <img key={i} src={img} className="rounded-xl border border-slate-200 dark:border-slate-800 hover:scale-[1.02] transition-transform cursor-pointer" alt="UI Screenshot" />
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setSelectedImage(img)}
+                      className="group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800"
+                    >
+                      <img
+                        src={img}
+                        alt="UI Screenshot"
+                        className="w-full rounded-xl cursor-zoom-in hover:scale-[1.05] transition-transform"
+                      />
+                    </button>
                   ))}
                 </div>
               </div>
+
+              {selectedImage && (
+                <div
+                  className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  <div className="relative max-w-[90vw] max-h-[90vh]">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedImage(null)}
+                      className="absolute cursor-pointer -top-4 -right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg"
+                    >
+                      ✕
+                    </button>
+                    <img
+                      src={selectedImage}
+                      alt="UI Screenshot enlarged"
+                      className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </div>
+                </div>
+              )}
 
               {/* Final Footer Links */}
               <div className="flex gap-4 pt-10">
