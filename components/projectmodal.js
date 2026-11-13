@@ -111,7 +111,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
               {selectedImage && (
                 <div
-                  className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4"
+                  className="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4"
                   onClick={() => setSelectedImage(null)}
                 >
                   <div className="relative max-w-[90vw] max-h-[90vh]">
